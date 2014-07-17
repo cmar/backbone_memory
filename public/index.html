@@ -67,14 +67,28 @@
     ]
 
     $(function() {
-      var cards = _.shuffle(CARDS.slice().concat(CARDS))
-      var deck = new Deck(cards)
 
-      var gameBoard = new GameBoard({ el: $("#board"), collection: deck })
-      gameBoard.render()
+      var Application = Backbone.Router.extend({
+        routes: {
+          "": "home"
+        },
 
-      var scoreBoard = new ScoreBoard({ el: $("#scoreboard"), collection: deck })
-      scoreBoard.render()
+        initialize: function() {
+          this.cards = _.shuffle(CARDS.slice().concat(CARDS))
+
+          this.deck = new Deck(this.cards)
+          this.gameBoard = new GameBoard({ el: $("#board"), collection: this.deck })
+          this.scoreBoard = new ScoreBoard({ el: $("#scoreboard"), collection: this.deck })
+        },
+
+        home: function() {
+          this.gameBoard.render()
+          this.scoreBoard.render()
+        }
+      })
+
+      var app = new Application()
+      Backbone.history.start()
     })
   </script>
 </html>
