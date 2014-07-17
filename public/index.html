@@ -36,7 +36,6 @@
         <h1 class="text-center">Big Winner</h1>
       </div>
       <div id='board' class="row"></div>
-
     </div>
   </body>
 
@@ -74,7 +73,7 @@
       var gameBoard = new GameBoard({ el: $("#board"), collection: deck })
       gameBoard.render()
 
-      var scoreBoard = new ScoreBoard({ collection: deck })
+      var scoreBoard = new ScoreBoard({ el: $("#scoreboard"), collection: deck })
       scoreBoard.render()
     })
   </script>

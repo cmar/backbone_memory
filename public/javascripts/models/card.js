@@ -15,7 +15,7 @@ var Card = Backbone.Model.extend({
   },
 
   isSelected: function() {
-    return this.get("selected") == true
+    return this.get("selected")
   },
 
   canSelect: function() {
@@ -35,7 +35,7 @@ var Card = Backbone.Model.extend({
   },
 
   isMatched: function() {
-    return this.get("matched") == true
+    return this.get("matched")
   },
 
   matches: function(other) {

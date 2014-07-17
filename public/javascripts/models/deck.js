@@ -1,6 +1,5 @@
 var Deck = Backbone.Collection.extend({
   model: Card,
-  url: 'deck.json',
 
   initialize: function() {
     this.on("change:selected", this.evaluate, this)
@@ -23,9 +22,7 @@ var Deck = Backbone.Collection.extend({
         }, 1000, this)
       }
 
-      if (this.allMatched()) {
-        this.trigger("all:matched")
-      }
+      if (this.allMatched()) { this.trigger("all:matched") }
     }
   },
 

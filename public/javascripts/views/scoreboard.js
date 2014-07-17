@@ -1,5 +1,4 @@
  var ScoreBoard = Backbone.View.extend({
-  el: $("#scoreboard"),
 
   initialize: function() {
     this.totalSelected = 0
@@ -26,9 +25,5 @@
 
   winner: function() {
     $('#you-win').show()
-  },
-
-  render: function() {
-    // $(this.el).html("score!")
   }
 })

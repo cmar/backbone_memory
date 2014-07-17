@@ -1,14 +1,14 @@
  [
-      { name: "bear", clipart_id: "49609" },
-      { name: "wolf", clipart_id: "133783" },
-      { name: "headphones", clipart_id: "148990" },
-      { name: "anchor", clipart_id: "126060" },
-      { name: "monkey", clipart_id: "117963" },
-      { name: "guns", clipart_id: "118253" },
-      { name: "viking", clipart_id: "133773" },
-      { name: "robot", clipart_id: "145644" },
-      { name: "mustache", clipart_id: "117909" },
-      { name: "boombox", clipart_id: "127681" },
-      { name: "skull", clipart_id: "116712" },
-      { name: "chef", clipart_id: "126708" }
-    ]
+      { "name": "bear", "clipart_id": "49609" },
+      { "name": "wolf", "clipart_id": "133783" },
+      { "name": "headphones", "clipart_id": "148990" },
+      { "name": "anchor", "clipart_id": "126060" },
+      { "name": "monkey", "clipart_id": "117963" },
+      { "name": "guns", "clipart_id": "118253" },
+      { "name": "viking", "clipart_id": "133773" },
+      { "name": "robot", "clipart_id": "145644" },
+      { "name": "mustache", "clipart_id": "117909" },
+      { "name": "boombox", "clipart_id": "127681" },
+      { "name": "skull", "clipart_id": "116712" },
+      { "name": "chef", "clipart_id": "126708" }
+]
