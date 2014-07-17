@@ -1,0 +1,29 @@
+.card {
+  height: 165px;
+  background: gray;
+  margin: 15px 0;
+
+  border-radius: 15px;
+}
+
+.card img {
+  padding-top: 15px;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+.selected {
+  background: green;
+}
+
+.selected img {
+  visibility: visible;
+}
+
+.matched {
+  background: red;
+}
+
+.matched img {
+  visibility: visible;
+}

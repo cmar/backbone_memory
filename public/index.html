@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backbone Memory</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/memory.css">
+  </head>
+
+  <script type="text/template" id="card_template">
+    <div class="card">
+      <img class="img-responsive" src="http://www.customink.com/clipart/manipulate?clipart_id=<%= clipart_id %>&width=135&height=135&red=0&green=0&blue=0">
+    </div>
+  </script>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Backbone Memory</h1>
+          <h3>by <a href="http://twitter.com/cmar">@cmar</a></h3>
+        </div>
+        <div class="col-md-6">
+          <div id='scoreboard' class="well well-sm">
+            <h2>Clicks <span class="click-score">0</span></h2>
+            <h2>Matched <span class="match-score">0</span>/12</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style='display: none;' id="you-win">
+        <h1 class="text-center">Big Winner</h1>
+      </div>
+      <div id='board' class="row"></div>
+
+    </div>
+  </body>
+
+  <script src="javascripts/jquery-2.1.1.min.js"></script>
+  <script src="javascripts/underscore-min.js"></script>
+  <script src="javascripts/backbone-min.js"></script>
+
+  <script src="javascripts/models/card.js"></script>
+  <script src="javascripts/models/deck.js"></script>
+
+  <script src="javascripts/views/card.js"></script>
+  <script src="javascripts/views/gameboard.js"></script>
+  <script src="javascripts/views/scoreboard.js"></script>
+
+  <script type="text/javascript">
+    var CARDS = [
+      { name: "bear", clipart_id: "49609" },
+      { name: "wolf", clipart_id: "133783" },
+      { name: "headphones", clipart_id: "148990" },
+      { name: "anchor", clipart_id: "126060" },
+      { name: "monkey", clipart_id: "117963" },
+      { name: "guns", clipart_id: "118253" },
+      { name: "viking", clipart_id: "133773" },
+      { name: "robot", clipart_id: "145644" },
+      { name: "mustache", clipart_id: "117909" },
+      { name: "boombox", clipart_id: "127681" },
+      { name: "skull", clipart_id: "116712" },
+      { name: "chef", clipart_id: "126708" }
+    ]
+
+    $(function() {
+      var cards = _.shuffle(CARDS.slice().concat(CARDS))
+      var deck = new Deck(cards)
+
+      var gameBoard = new GameBoard({ el: $("#board"), collection: deck })
+      gameBoard.render()
+
+      var scoreBoard = new ScoreBoard({ collection: deck })
+      scoreBoard.render()
+    })
+  </script>
+</html>
+
