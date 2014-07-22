@@ -39,6 +39,6 @@ var Card = Backbone.Model.extend({
   },
 
   matches: function(other) {
-    return this.get("clipart_id") == other.get("clipart_id")
+    return this.get("name") == other.get("name")
   }
 })
